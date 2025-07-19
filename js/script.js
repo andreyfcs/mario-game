@@ -33,10 +33,12 @@ const loop = setInterval(() => {
         mario.style.width = '85px'
         mario.style.marginLeft = '50px'
 
+        document.querySelector('.gameover').style.display = 'block';
+
         clearInterval(loop); 
 
     } 
 
- }, 10);
+ }, 10);          
 
 document.addEventListener('keydown', jump);
