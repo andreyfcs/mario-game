@@ -1,6 +1,9 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
+//Reiniciar o jogo
+let gameOver = false;
+
 // função para pular
 const jump = () => {
     mario.classList.add('jump');
@@ -34,7 +37,7 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px'
 
         document.querySelector('.gameover').style.display = 'block';
-
+        gameOver = true;
         clearInterval(loop); 
 
     } 
@@ -42,3 +45,8 @@ const loop = setInterval(() => {
  }, 10);          
 
 document.addEventListener('keydown', jump);
+document.addEventListener('click', () => {
+    if (gameOver) {
+        location.reload();
+    }
+})
